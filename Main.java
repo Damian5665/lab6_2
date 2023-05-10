@@ -29,6 +29,10 @@ class Main {
           catch(WrongDateOfBirth e) {
                 System.out.println("Błędne daty!");
             }
+          catch(java.util.InputMismatchException e){
+            System.out.println("Błedny wybor!");
+            scan.next();
+          }
         }
     }
 
@@ -38,9 +42,10 @@ class Main {
         System.out.println("2 - aby wypisać wszystkich studentów");
         System.out.println("3 - aby wyszukać studenta po imieniu");
         System.out.println("0 - aby wyjść z programu");
+
         return scan.nextInt();
     }
-
+  
     public static String ReadName() throws WrongStudentName {
         scan.nextLine();
         System.out.println("Podaj imie: ");
